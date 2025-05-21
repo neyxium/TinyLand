@@ -70,7 +70,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.039938748}
+  m_Offset: {x: 0, y: -0.15884992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +80,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.2053994}
+  m_Size: {x: 1, y: 0.96757704}
   m_EdgeRadius: 0
 --- !u!50 &2632085939212897553
 Rigidbody2D:
@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 7165747080246176199}
   - component: {fileID: 8420390956659411220}
   - component: {fileID: 4095441614389359591}
-  - component: {fileID: 5237425545517854770}
   m_Layer: 0
   m_Name: Tool
   m_TagString: Axe
@@ -328,33 +327,11 @@ MonoBehaviour:
   sword:
   - {fileID: 486465321641844290, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   pickaxe:
-  - {fileID: -7006186734936748667, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  - {fileID: -573628331220069423, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   axe:
   - {fileID: -1430991953356022600, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   bow:
-  - {fileID: -8990396499123047215, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
-  equipedTool: 
---- !u!114 &5237425545517854770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6048551103538473941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce5a21003fdd1f4bb00fd2388a4af45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 2325062319898522840}
-  sword:
-  - {fileID: 486465321641844290, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
-  pickaxe:
-  - {fileID: -1720704910, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
-  axe:
-  - {fileID: -1430991953356022600, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
-  bow:
-  - {fileID: -8990396499123047215, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  - {fileID: -8464572974738409454, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   equipedTool: 
 --- !u!1 &7305389416436204678
 GameObject:

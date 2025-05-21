@@ -12,4 +12,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public void Mountain()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

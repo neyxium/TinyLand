@@ -10,11 +10,6 @@ public class ToolBehaviour : MonoBehaviour
     [SerializeField] List<Sprite> bow;
     public string equipedTool;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         HandleInput();
@@ -68,34 +63,16 @@ public class ToolBehaviour : MonoBehaviour
         }
     }
 
-    void AllignAxe()
-    {
-        switch (playerMovement.direction)
-        {
-            case Direction.Back:
-                gameObject.transform.localPosition = new Vector3(0.5f, 0.5f, 0);
-                gameObject.transform.localRotation = Quaternion.Euler(0, 0, 180);
-                break;
-            case Direction.Front:
-                gameObject.transform.localPosition = new Vector3(-0.5f, -0.5f, 0);
-                gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                break;
-            case Direction.Left:
-                gameObject.transform.localPosition = new Vector3(-0.5f, -0.5f, 0);
-                gameObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
-                break;
-            case Direction.Right:
-                gameObject.transform.localPosition = new Vector3(-0.5f, -0.5f, 0);
-                gameObject.transform.localRotation = Quaternion.Euler(0, 0, -90);
-                break;
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Tree"))
         {
             playerMovement.SetTreeInRange(other.gameObject);
+        }
+        else if (other.CompareTag("Stone"))
+        {
+            Debug.Log("In range");
+            playerMovement.SetStoneInRange(other.gameObject);
         }
     }
 
@@ -104,6 +81,11 @@ public class ToolBehaviour : MonoBehaviour
         if (other.CompareTag("Tree"))
         {
             playerMovement.SetTreeInRange(null);
+        }
+        else if (other.CompareTag("Stone"))
+        {
+            Debug.Log("NOT In range");
+            playerMovement.SetStoneInRange(null);
         }
     }
 

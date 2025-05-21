@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator toolAnimator;
     private SpriteRenderer toolRenderer;
     private GameObject treeInRange = null;
+    private GameObject stoneInRange = null;
     ToolBehaviour toolBehaviour;
 
     void Start()
@@ -84,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if (tool.activeSelf && toolBehaviour.equipedTool == "axe")
+            if (tool.activeSelf && (toolBehaviour.equipedTool == "axe" || toolBehaviour.equipedTool == "pickaxe"))
             {
                 toolAnimator.enabled = true;
                 toolAnimator.SetInteger("Direction", (int)direction);
@@ -106,10 +107,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (treeInRange != null)
         {
-            TreeBehaviour treeScript = treeInRange.GetComponent<TreeBehaviour>();
-            if (treeScript != null)
+            BreakableEnviroment treeScript = treeInRange.GetComponent<BreakableEnviroment>();
+            if (treeScript != null && toolBehaviour.equipedTool == "axe")
             {
-                bool destroyed = treeScript.DamageTree();
+                bool destroyed = treeScript.DamageObject();
+            }
+        }
+        else if (stoneInRange != null && toolBehaviour.equipedTool == "pickaxe")
+        {
+            BreakableEnviroment stoneScript = stoneInRange.GetComponent<BreakableEnviroment>();
+            if (stoneScript != null)
+            {
+                bool destroyed = stoneScript.DamageObject();
             }
         }
     }
@@ -173,6 +182,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetTreeInRange(GameObject tree)
     {
         treeInRange = tree;
+    }
+
+    public void SetStoneInRange(GameObject stone)
+    {
+        stoneInRange = stone;
     }
 
 }
