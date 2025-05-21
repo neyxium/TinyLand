@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Axe
   - Tree
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 665623301
+    locked: 0
+  - name: ItemDrops
+    uniqueID: 1534631031
+    locked: 0
+  - name: Tree
+    uniqueID: 814677387
     locked: 0
   m_RenderingLayers:
   - Default

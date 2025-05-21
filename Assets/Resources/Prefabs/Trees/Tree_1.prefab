@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1288499909
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 814677387
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7393824619407222304, guid: 4dcdb68757e92b14cb1594e62c4eb0d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a3adf94a81322409f681b922c97c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodItem: {fileID: 3372017397422025369, guid: 6684d028c636f754aa3fec023a2b1294, type: 3}
