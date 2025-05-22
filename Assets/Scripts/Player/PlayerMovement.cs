@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum Direction
 {
@@ -91,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
                 toolAnimator.SetInteger("Direction", (int)direction);
                 toolAnimator.SetBool("Active", true);
             }
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            SceneManager.LoadScene(0);
         }
         else
         {
