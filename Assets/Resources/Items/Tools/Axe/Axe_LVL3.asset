@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4294c7494126b684fa9731f6001f53d3, type: 3}
+  m_Name: Axe_LVL3
+  m_EditorClassIdentifier: 
+  itemName: Axe_Iron
+  icon: {fileID: -1003969845038260664, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  size: 0
+  isTool: 1

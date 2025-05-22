@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1099676612}
+      - m_Target: {fileID: 1562439329}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: Mountain
         m_Mode: 1
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 1099676609}
   - component: {fileID: 1099676608}
   - component: {fileID: 1099676611}
-  - component: {fileID: 1099676612}
+  - component: {fileID: 1099676614}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -487,7 +487,7 @@ MonoBehaviour:
   backpackSpaceFilled: 0
   wood: 0
   playerHealth: 100
---- !u!114 &1099676612
+--- !u!114 &1099676614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1099676607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffa3520c7e41b84d899874d47488d1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 524d376149646bf4589b354655c946e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1409562990
@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 1562439327}
   - component: {fileID: 1562439326}
   - component: {fileID: 1562439325}
+  - component: {fileID: 1562439329}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -875,6 +876,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1562439329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562439324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffa3520c7e41b84d899874d47488d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1614875142
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +971,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1099676612}
+      - m_Target: {fileID: 1562439329}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: Game
         m_Mode: 1
@@ -1091,7 +1104,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1099676612}
+      - m_Target: {fileID: 1562439329}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: Forest
         m_Mode: 1

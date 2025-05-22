@@ -8,14 +8,15 @@ TagManager:
   - Tree
   - Item
   - Stone
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Axe
   - Water
   - UI
-  - 
+  - NPC
   - 
   - 
   - 
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: BreakableEnviroment
     uniqueID: 814677387
+    locked: 0
+  - name: ChatBubble
+    uniqueID: 3594194061
     locked: 0
   m_RenderingLayers:
   - Default

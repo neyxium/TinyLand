@@ -23,6 +23,13 @@ public class GameData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        LoadData();
+        LoadBackpack();
+        //ResetData();
+        //ClearBackpack();
+    }
 
     public void SaveData()
     {
@@ -35,15 +42,16 @@ public class GameData : MonoBehaviour
 
     public void LoadData()
     {
-        wood = PlayerPrefs.GetInt("wood");
-        playerHealth = PlayerPrefs.GetInt("playerHealth");
-        backpackMaxSpace = PlayerPrefs.GetInt("backpackMaxSpace");
-        backpackSpaceFilled = PlayerPrefs.GetInt("backpackSpaceFilled");
+        wood = PlayerPrefs.GetInt("wood", 0);
+        playerHealth = PlayerPrefs.GetInt("playerHealth", 100);
+        backpackMaxSpace = PlayerPrefs.GetInt("backpackMaxSpace", 100);
+        backpackSpaceFilled = PlayerPrefs.GetInt("backpackSpaceFilled", 0);
     }
 
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 
     // BACKPACK STUFF
@@ -71,6 +79,14 @@ public class GameData : MonoBehaviour
         }
     }
 
+    public void ClearBackpack()
+    {
+        backpack.Clear();
+        SaveBackpack();
+    }
+
+    public event System.Action OnInventoryChanged; // Creates an event for inventory changes
+
     public void AddToBackpack(string itemName, int quantity)
     {
         var existing = backpack.Find(item => item.itemName == itemName);
@@ -82,7 +98,22 @@ public class GameData : MonoBehaviour
         {
             backpack.Add(new InventoryItem(itemName, quantity));
         }
+
+        OnInventoryChanged?.Invoke(); // Invokes event and tells all listeners that the inventory has changed (InventoryUI)
     }
+
+    public Item GetItemByName(string name)
+    {
+        Item[] allItems = Resources.LoadAll<Item>("Items");
+        foreach (Item item in allItems)
+        {
+            if (item.itemName == name)
+                return item;
+        }
+        Debug.LogWarning("Item not found: " + name);
+        return null;
+    }
+
 
 
     // Wrapper class for List<InventoryItem> (JsonUtility doesn't serialize lists directly)
@@ -96,5 +127,7 @@ public class GameData : MonoBehaviour
             this.items = items;
         }
     }
+
+    
 
 }

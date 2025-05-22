@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   itemName: Stone
-  icon: {fileID: 1054739665, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  icon: {fileID: -876579599, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   size: 1
+  isTool: 0

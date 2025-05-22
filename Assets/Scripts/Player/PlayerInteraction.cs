@@ -6,30 +6,48 @@ public class PlayerInteraction : MonoBehaviour
     {
         // Poskusi pridobiti WorldItem komponento
         WorldItem worldItem = collision.gameObject.GetComponent<WorldItem>();
-        if (worldItem == null) return;
-
-        // Preveri prostor v nahrbtniku
-        if (GameData.Instance.backpackMaxSpace >= GameData.Instance.backpackSpaceFilled + worldItem.itemData.size)
+        if (worldItem != null)
         {
-            // Dodaj item
-            GameData.Instance.AddToBackpack(worldItem.itemData.itemName, worldItem.quantity);
-            GameData.Instance.backpackSpaceFilled += worldItem.itemData.size * worldItem.quantity;
-
-            GameData.Instance.SaveData();
-            GameData.Instance.SaveBackpack();
-
-            // Izpiši vsebino nahrbtnika
-            Debug.Log("Backpack:");
-            foreach (var item in GameData.Instance.backpack)
+            if (GameData.Instance.backpackMaxSpace >= GameData.Instance.backpackSpaceFilled + worldItem.itemData.size)
             {
-                Debug.Log(item.itemName + ": " + item.quantity);
-            }
+                // Dodaj item
+                GameData.Instance.AddToBackpack(worldItem.itemData.itemName, worldItem.quantity);
+                GameData.Instance.backpackSpaceFilled += worldItem.itemData.size * worldItem.quantity;
 
-            Destroy(collision.gameObject);
+                GameData.Instance.SaveData();
+                GameData.Instance.SaveBackpack();
+
+                // Izpiši vsebino nahrbtnika
+                Debug.Log("Backpack:");
+                foreach (var item in GameData.Instance.backpack)
+                {
+                    Debug.Log(item.itemName + ": " + item.quantity);
+                }
+
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("Not enough space in backpack!");
+            }
         }
         else
         {
-            Debug.Log("Not enough space in backpack!");
+
+        }
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NPC")
+        {
+            if (collision.gameObject.name == "TheAxeGuy")
+            {
+                collision.gameObject.GetComponent<NPCInteraction>().TheAxeGuyDialog();
+            }
+            
         }
     }
 }

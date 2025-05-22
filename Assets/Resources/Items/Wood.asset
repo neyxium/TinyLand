@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   itemName: Wood
-  icon: {fileID: -1780332423, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  icon: {fileID: -271238999, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   size: 1
+  isTool: 0

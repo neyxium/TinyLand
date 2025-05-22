@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7302034445877216511}
   - component: {fileID: 4361770365136612237}
   m_Layer: 0
-  m_Name: woodIcon
+  m_Name: Icon
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 1534631031
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -271238999, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6927006904363009412
