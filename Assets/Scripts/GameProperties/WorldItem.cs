@@ -1,13 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WorldItem : MonoBehaviour
 {
     public Item itemData;
-    public int quantity = 1;
+    [HideInInspector] public int quantity;
 
     void Start()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = itemData.icon;
+        if (itemData != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = itemData.icon;
+            quantity = itemData.size;
+        }
     }
 }

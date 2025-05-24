@@ -19,23 +19,24 @@ public class ToolBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            equipedTool = "sword";
+            equipedTool = GetTool(0);
+            Debug.Log(equipedTool);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            equipedTool = "pickaxe";
+            equipedTool = GetTool(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            equipedTool = "axe";
+            equipedTool = GetTool(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            equipedTool = "bow";
+            equipedTool = GetTool(3);
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            equipedTool = "none";
+            equipedTool = GetTool(4);
         }
 
         SelectTool(equipedTool);
@@ -45,19 +46,19 @@ public class ToolBehaviour : MonoBehaviour
     {
         switch (equipedTool)
         {
-            case "sword":
+            case "Sword":
                 gameObject.GetComponent<SpriteRenderer>().sprite = sword[0];
                 break;
-            case "pickaxe":
+            case "Pickaxe":
                 gameObject.GetComponent<SpriteRenderer>().sprite = pickaxe[0];
                 break;
-            case "axe":
+            case "Axe":
                 gameObject.GetComponent<SpriteRenderer>().sprite = axe[0];
                 break;
-            case "bow":
+            case "Bow":
                 gameObject.GetComponent<SpriteRenderer>().sprite = bow[0];
                 break;
-            case "none":
+            case "":
                 gameObject.GetComponent<SpriteRenderer>().sprite = null;
                 break;
         }
@@ -87,6 +88,26 @@ public class ToolBehaviour : MonoBehaviour
             Debug.Log("NOT In range");
             playerMovement.SetStoneInRange(null);
         }
+    }
+    private string GetTool(int targetIndex)
+    {
+        int index = 0;
+        foreach (InventoryItem item in GameData.Instance.backpack)
+        {
+            Item itemData = GameData.Instance.GetItemByName(item.itemName);
+            if (itemData == null) continue;
+
+            if (itemData.isTool)
+            {
+                if (index == targetIndex)
+                {
+                    string returnedItem = itemData.itemName;
+                    return returnedItem.Split('_')[0];
+                }
+                index++;
+            }
+        }
+        return "";
     }
 
     public void OnAxeSwingEnd()

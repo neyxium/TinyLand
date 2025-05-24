@@ -114,6 +114,31 @@ public class GameData : MonoBehaviour
         return null;
     }
 
+    public bool HasItem(string itemName)
+    {
+        foreach (InventoryItem item in backpack)
+        {
+            if (item.itemName == itemName && item.quantity > 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void TakeAwayItem(string itemName, int ammount = 1)
+    {
+        foreach (InventoryItem item in backpack)
+        {
+            if (item.itemName == itemName && item.quantity > 0)
+            {
+                item.quantity -= ammount;
+            }
+        }
+        OnInventoryChanged?.Invoke();
+    }
+
+
 
 
     // Wrapper class for List<InventoryItem> (JsonUtility doesn't serialize lists directly)
@@ -128,6 +153,6 @@ public class GameData : MonoBehaviour
         }
     }
 
-    
+
 
 }

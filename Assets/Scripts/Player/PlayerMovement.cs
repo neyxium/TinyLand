@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer toolRenderer;
     private GameObject treeInRange = null;
     private GameObject stoneInRange = null;
+    [SerializeField] GameObject sapling;
     ToolBehaviour toolBehaviour;
 
     void Start()
@@ -43,12 +45,12 @@ public class PlayerMovement : MonoBehaviour
     {
         switch (toolBehaviour.equipedTool)
         {
-            case "axe":
-            case "sword":
-            case "pickaxe":
+            case "Axe":
+            case "Sword":
+            case "Pickaxe":
                 UpdateToolDirection(direction);
                 break;
-            case "bow":
+            case "Bow":
                 UpdateBowDirection(direction);
                 break;
         }
@@ -83,19 +85,47 @@ public class PlayerMovement : MonoBehaviour
             direction = Direction.Right;
             isMoving = true;
         }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene(0);
+        }
 
         if (Input.GetMouseButton(0))
         {
-            if (tool.activeSelf && (toolBehaviour.equipedTool == "axe" || toolBehaviour.equipedTool == "pickaxe"))
+            if (tool.activeSelf && (toolBehaviour.equipedTool == "Axe" || toolBehaviour.equipedTool == "Pickaxe"))
             {
                 toolAnimator.enabled = true;
                 toolAnimator.SetInteger("Direction", (int)direction);
                 toolAnimator.SetBool("Active", true);
             }
         }
-        else if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            SceneManager.LoadScene(0);
+            float radius = 2f;
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
+
+            bool foundTree = false;
+
+            foreach (var hit in hits)
+            {
+                if (hit.CompareTag("Tree") || hit.CompareTag("Sapling"))
+                {
+                    foundTree = true;
+                    break;
+                }
+            }
+
+            if (!foundTree && GameData.Instance.HasItem("Sapling"))
+            {
+                Instantiate(sapling, transform.position, Quaternion.identity);
+                GameData.Instance.TakeAwayItem("Sapling");
+                GameData.Instance.SaveData();
+                GameData.Instance.SaveBackpack();
+            }
+            else if (foundTree)
+            {
+                Debug.Log("Too close to another tree!");
+            }
         }
         else
         {
@@ -108,17 +138,24 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetInteger("direction", (int)direction);
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 1.5f);
+    }
+
+
     public void OnAxeSwingEnd()
     {
         if (treeInRange != null)
         {
             BreakableEnviroment treeScript = treeInRange.GetComponent<BreakableEnviroment>();
-            if (treeScript != null && toolBehaviour.equipedTool == "axe")
+            if (treeScript != null && toolBehaviour.equipedTool == "Axe")
             {
                 bool destroyed = treeScript.DamageObject();
             }
         }
-        else if (stoneInRange != null && toolBehaviour.equipedTool == "pickaxe")
+        else if (stoneInRange != null && toolBehaviour.equipedTool == "Pickaxe")
         {
             BreakableEnviroment stoneScript = stoneInRange.GetComponent<BreakableEnviroment>();
             if (stoneScript != null)

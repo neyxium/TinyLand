@@ -37979,6 +37979,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2325062319898522840, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
+      propertyPath: sapling
+      value: 
+      objectReference: {fileID: 482957036659070538, guid: 60943a134dc2e664daf653932efd1dd6, type: 3}
+    - target: {fileID: 2325062319898522840, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
+      propertyPath: worldItemPrefab
+      value: 
+      objectReference: {fileID: 3372017397422025369, guid: 02d5074160e78074fa5e288de52456ef, type: 3}
     - target: {fileID: 5489657276000157799, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
       propertyPath: m_Name
       value: Player

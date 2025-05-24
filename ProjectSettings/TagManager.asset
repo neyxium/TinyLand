@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Stone
   - NPC
+  - Sapling
   layers:
   - Default
   - TransparentFX

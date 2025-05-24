@@ -8,4 +8,6 @@ public class Item : ScriptableObject
     public Sprite icon;
     public int size;
     public bool isTool;
+    [Header("Drop Chance")]
+    [Range(0, 100)] public int dropChance = 100;
 }
