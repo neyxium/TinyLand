@@ -1,5 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public enum treeType
+{
+    tree,
+    sapling,
+    unhealthyTree
+}
 
 public class MapGeneration : MonoBehaviour
 {
@@ -9,22 +17,66 @@ public class MapGeneration : MonoBehaviour
     List<Vector2> spawnedLocation = new List<Vector2>();
     void Start()
     {
-        GenerateObjects();
+        if (GameData.Instance.trees == -1 || GameData.Instance.plantedSaplings == -1)
+        {
+            GenerateObjects();
+        }
+        else
+        {
+            GenerateObjects(GameData.Instance.trees, GameData.Instance.plantedSaplings);
+        }
     }
 
-    private void GenerateObjects()
+    private void GenerateObjects(int trees = 50, int saplings = -1)
     {
-        for (int i = 0; i < 5 * spawningMultiplier; i++)
+        Debug.Log("Trees: " + trees + ", Saplings: " + saplings);
+        GameData.Instance.trees = 0;
+        GameData.Instance.plantedSaplings = 0;
+
+        for (int i = 0; i < trees; i++)
         {
-            Vector2 location = getLocation();
+            spawnTree(treeType.tree, Vector2.zero, "Tree_" + i);
+        }
+        if (saplings != -1)
+        {
+            for (int i = 0; i < saplings; i++)
+            {
+                Vector2 location = getLocation();
+                if (location == Vector2.zero)
+                {
+                    break;
+                }
+                spawnTree(treeType.sapling, Vector2.zero, "Sapling_" + i);
+            }
+        }
+    }
+
+    public void spawnTree(treeType objectType, Vector2 location, string name)
+    {
+        if (location == Vector2.zero)
+        {
+            location = getLocation();
             if (location == Vector2.zero)
             {
-                break;
+                return;
             }
-            Random.Range(0, objects.Count);
-            Instantiate(objects[random], location, Quaternion.identity);
-            spawnedLocation.Add(location);
         }
+        GameObject breakableObject = Instantiate(objects[(int)objectType], location, Quaternion.identity);
+        breakableObject.name = name;
+        spawnedLocation.Add(location);
+        switch (objectType)
+        {
+            case treeType.tree:
+                GameData.Instance.trees++;
+                break;
+            case treeType.sapling:
+                GameData.Instance.plantedSaplings++;
+                break;
+            default:
+                Debug.LogWarning("Unknown tree type!");
+                break;
+        }
+        GameData.Instance.SaveData();
     }
 
     private Vector2 getLocation()

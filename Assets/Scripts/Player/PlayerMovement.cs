@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -99,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
                 toolAnimator.SetBool("Active", true);
             }
         }
+        else
+        {
+            toolAnimator.enabled = false;
+            toolAnimator.SetBool("Active", false);
+        }
         if (Input.GetMouseButtonDown(1))
         {
             float radius = 2f;
@@ -117,25 +123,44 @@ public class PlayerMovement : MonoBehaviour
 
             if (!foundTree && GameData.Instance.HasItem("Sapling"))
             {
-                Instantiate(sapling, transform.position, Quaternion.identity);
-                GameData.Instance.TakeAwayItem("Sapling");
-                GameData.Instance.SaveData();
-                GameData.Instance.SaveBackpack();
+                if (GameObject.FindAnyObjectByType<MapGeneration>() != null)
+                {
+                    GameObject.FindAnyObjectByType<MapGeneration>().spawnTree(treeType.sapling, gameObject.transform.position, GetNextSaplingName());
+                    GameData.Instance.TakeAwayItem("Sapling");
+                    GameData.Instance.SaveData();
+                    GameData.Instance.SaveBackpack();
+                }
+
             }
             else if (foundTree)
             {
                 Debug.Log("Too close to another tree!");
             }
         }
-        else
-        {
-            toolAnimator.enabled = false;
-            toolAnimator.SetBool("Active", false);
-        }
 
         player.transform.position = pos;
         playerAnimator.SetBool("isMoving", isMoving);
         playerAnimator.SetInteger("direction", (int)direction);
+    }
+
+    private static String GetNextSaplingName()
+    {
+        GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        int maxIndex = -1;
+        foreach (var item in objects)
+        {
+            if (item.name.StartsWith("Sapling_"))
+            {
+                string number = item.name.Replace("Sapling_", "");
+                if (int.TryParse(number, out int index))
+                {
+                    if (index > maxIndex)
+                        maxIndex = index;
+                }
+            }
+        }
+        int nextIndex = maxIndex + 1;
+        return "Sapling_" + nextIndex;
     }
 
     void OnDrawGizmosSelected()

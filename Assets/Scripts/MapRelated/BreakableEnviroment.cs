@@ -12,8 +12,11 @@ public class BreakableEnviroment : MonoBehaviour
 
         if (enviromentHealth <= 0)
         {
+            GameData.Instance.trees--;
+            GameData.Instance.SaveData();
             foreach (Item item in dropItems)
             {
+
                 int roll = Random.Range(0, 101);
                 if (roll <= item.dropChance)
                 {
@@ -21,7 +24,7 @@ public class BreakableEnviroment : MonoBehaviour
                     pos.y += Random.Range(-1f, 1.01f);
                     pos.x += Random.Range(-1f, 1.01f);
                     GameObject dropped = Instantiate(worldItemPrefab, pos, Quaternion.identity);
-                    dropped.GetComponentInChildren<WorldItem>().itemData = item;    
+                    dropped.GetComponentInChildren<WorldItem>().itemData = item;
                 }
             }
 

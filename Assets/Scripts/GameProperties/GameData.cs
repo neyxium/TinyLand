@@ -11,6 +11,9 @@ public class GameData : MonoBehaviour
     public int backpackSpaceFilled = 0;
     public int wood = 0;
     public int playerHealth = 100;
+    public int trees;
+    public int saplings;
+    public int plantedSaplings;
     void Awake()
     {
         if (Instance == null)
@@ -37,6 +40,9 @@ public class GameData : MonoBehaviour
         PlayerPrefs.SetInt("playerHealth", playerHealth);
         PlayerPrefs.SetInt("backpackMaxSpace", backpackMaxSpace);
         PlayerPrefs.SetInt("backpackSpaceFilled", backpackSpaceFilled);
+        PlayerPrefs.SetInt("trees", trees);
+        PlayerPrefs.SetInt("saplings", saplings);
+        PlayerPrefs.SetInt("plantedSaplings", plantedSaplings);
         PlayerPrefs.Save();
     }
 
@@ -46,6 +52,9 @@ public class GameData : MonoBehaviour
         playerHealth = PlayerPrefs.GetInt("playerHealth", 100);
         backpackMaxSpace = PlayerPrefs.GetInt("backpackMaxSpace", 100);
         backpackSpaceFilled = PlayerPrefs.GetInt("backpackSpaceFilled", 0);
+        trees = PlayerPrefs.GetInt("trees", -1);
+        saplings = PlayerPrefs.GetInt("saplings", -1);
+        plantedSaplings = PlayerPrefs.GetInt("plantedSaplings", -1);
     }
 
     public void ResetData()
