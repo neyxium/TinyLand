@@ -123,9 +123,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (!foundTree && GameData.Instance.HasItem("Sapling"))
             {
-                if (GameObject.FindAnyObjectByType<MapGeneration>() != null)
+                MapGeneration mapGen = GameObject.FindAnyObjectByType<MapGeneration>();
+                if (mapGen != null)
                 {
-                    GameObject.FindAnyObjectByType<MapGeneration>().spawnTree(treeType.sapling, gameObject.transform.position, GetNextSaplingName());
+                    mapGen.spawnTree(treeType.sapling, gameObject.transform.position, mapGen.GetNextSaplingName());
                     GameData.Instance.TakeAwayItem("Sapling");
                     GameData.Instance.SaveData();
                     GameData.Instance.SaveBackpack();
@@ -141,26 +142,6 @@ public class PlayerMovement : MonoBehaviour
         player.transform.position = pos;
         playerAnimator.SetBool("isMoving", isMoving);
         playerAnimator.SetInteger("direction", (int)direction);
-    }
-
-    private static String GetNextSaplingName()
-    {
-        GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
-        int maxIndex = -1;
-        foreach (var item in objects)
-        {
-            if (item.name.StartsWith("Sapling_"))
-            {
-                string number = item.name.Replace("Sapling_", "");
-                if (int.TryParse(number, out int index))
-                {
-                    if (index > maxIndex)
-                        maxIndex = index;
-                }
-            }
-        }
-        int nextIndex = maxIndex + 1;
-        return "Sapling_" + nextIndex;
     }
 
     void OnDrawGizmosSelected()

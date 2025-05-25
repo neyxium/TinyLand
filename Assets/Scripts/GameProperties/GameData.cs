@@ -144,6 +144,7 @@ public class GameData : MonoBehaviour
                 item.quantity -= ammount;
             }
         }
+        backpackSpaceFilled--;
         OnInventoryChanged?.Invoke();
     }
 

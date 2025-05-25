@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 41558327920846846}
   - component: {fileID: 2734674122508494290}
   - component: {fileID: -2891817128827708812}
+  - component: {fileID: 3291918047564501302}
   m_Layer: 0
   m_Name: Sapling
   m_TagString: Sapling
@@ -134,3 +135,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.15450928, y: 0.12701932}
   m_EdgeRadius: 0
+--- !u!114 &3291918047564501302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482957036659070538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a4990a5c64b35418ec1579d1f261cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growthDuration: 10
+  grownTreePrefab: {fileID: 8141739753345550484, guid: 9ab0753c5fb347e4e9ac412e5a29d2c9, type: 3}

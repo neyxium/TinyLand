@@ -37,7 +37,7 @@ public class MapGeneration : MonoBehaviour
         {
             spawnTree(treeType.tree, Vector2.zero, "Tree_" + i);
         }
-        if (saplings != -1)
+        if (saplings != -1 || saplings != 0)
         {
             for (int i = 0; i < saplings; i++)
             {
@@ -77,6 +77,46 @@ public class MapGeneration : MonoBehaviour
                 break;
         }
         GameData.Instance.SaveData();
+    }
+
+    public string GetNextSaplingName()
+    {
+        GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        int maxIndex = -1;
+        foreach (var item in objects)
+        {
+            if (item.name.StartsWith("Sapling_"))
+            {
+                string number = item.name.Replace("Sapling_", "");
+                if (int.TryParse(number, out int index))
+                {
+                    if (index > maxIndex)
+                        maxIndex = index;
+                }
+            }
+        }
+        int nextIndex = maxIndex + 1;
+        return "Sapling_" + nextIndex;
+    }
+
+    public string GetNextTreeName()
+    {
+        GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        int maxIndex = -1;
+        foreach (var item in objects)
+        {
+            if (item.name.StartsWith("Tree_"))
+            {
+                string number = item.name.Replace("Tree_", "");
+                if (int.TryParse(number, out int index))
+                {
+                    if (index > maxIndex)
+                        maxIndex = index;
+                }
+            }
+        }
+        int nextIndex = maxIndex + 1;
+        return "Tree_" + nextIndex;
     }
 
     private Vector2 getLocation()
