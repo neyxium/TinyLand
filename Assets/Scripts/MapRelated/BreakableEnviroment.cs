@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class BreakableEnviroment : MonoBehaviour
@@ -8,8 +9,9 @@ public class BreakableEnviroment : MonoBehaviour
     [SerializeField] GameObject worldItemPrefab;
     public bool DamageObject()
     {
-        enviromentHealth -= 1+GameData.Instance.houseProgress;
+        enviromentHealth -= 1 + GameData.Instance.houseProgress;
 
+        StartCoroutine(FlashWhite());
         if (enviromentHealth <= 0)
         {
             GameData.Instance.trees--;
@@ -34,5 +36,19 @@ public class BreakableEnviroment : MonoBehaviour
 
         return false;
     }
+
+    private IEnumerator FlashWhite()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            Color originalColor = sr.color;
+            // set color to FD9595
+            sr.color = new Color(1f, 0.58f, 0.58f, 1f);
+            yield return new WaitForSeconds(0.05f);
+            sr.color = originalColor;
+        }
+    }
+
 
 }

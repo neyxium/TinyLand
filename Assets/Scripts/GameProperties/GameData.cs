@@ -30,8 +30,8 @@ public class GameData : MonoBehaviour
     }
     private void Start()
     {
-        ResetData();
-        ClearBackpack();
+        //ResetData();
+        //ClearBackpack();
         LoadData();
         LoadBackpack();
     }
