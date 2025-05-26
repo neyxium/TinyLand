@@ -1,49 +1,10 @@
 fileFormatVersion: 2
-guid: 6a787ec048e2c084090031433d5348a4
+guid: cf64dcf614351b047bcc9935ebbaf783
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -460177995810820211
-    second: Water Temple Sample sheet_48_0
-  - first:
-      213: 2203034898536617602
-    second: Water Temple Sample sheet_48_1
-  - first:
-      213: 6135647743549638011
-    second: Water Temple Sample sheet_48_2
-  - first:
-      213: -8514168087447069408
-    second: Water Temple Sample sheet_48_3
-  - first:
-      213: 7352545577618059048
-    second: Water Temple Sample sheet_48_4
-  - first:
-      213: -1935241605100375858
-    second: Water Temple Sample sheet_48_5
-  - first:
-      213: 2642521452994197064
-    second: Water Temple Sample sheet_48_6
-  - first:
-      213: 8253927753293805871
-    second: Water Temple Sample sheet_48_7
-  - first:
-      213: -8352768225514392841
-    second: Water Temple Sample sheet_48_8
-  - first:
-      213: 937783673542596677
-    second: Water Temple Sample sheet_48_9
-  - first:
-      213: -2410409088954481111
-    second: Water Temple Sample sheet_48_10
-  - first:
-      213: -7207955859751926212
-    second: Water Temple Sample sheet_48_11
-  - first:
-      213: -6036723334501277711
-    second: Water Temple Sample sheet_48_12
-  - first:
-      213: -2414550923997970154
-    second: Water Temple Sample sheet_48_13
+      213: 5184219358581797939
+    second: Ocean_SpriteSheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -76,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,326 +96,357 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Water Temple Sample sheet_48_0
+      name: Ocean_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 143
-        width: 481
-        height: 289
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8fae3a0d8e1d99f0800000000000000
-      internalID: -460177995810820211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_1
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 383
-        width: 50
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 286501b6190c29e10800000000000000
-      internalID: 2203034898536617602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_2
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 287
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b75043d5d13362550800000000000000
-      internalID: 6135647743549638011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_3
-      rect:
-        serializedVersion: 2
-        x: 533
-        y: 197
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02d10c50c3997d980800000000000000
-      internalID: -8514168087447069408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_4
-      rect:
-        serializedVersion: 2
-        x: 578
-        y: 206
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82f2bc45f3d790660800000000000000
-      internalID: 7352545577618059048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_5
-      rect:
-        serializedVersion: 2
-        x: 605
-        y: 209
-        width: 14
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec07f657304a425e0800000000000000
-      internalID: -1935241605100375858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_6
-      rect:
-        serializedVersion: 2
-        x: 536
-        y: 149
+        y: 32
         width: 32
-        height: 38
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8467115c24f1ca420800000000000000
-      internalID: 2642521452994197064
+      spriteID: 69214a2a7e07c96479cdfe548344811f
+      internalID: -210786638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Temple Sample sheet_48_7
+      name: Ocean_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 590
-        y: 155
+        x: 32
+        y: 32
         width: 32
-        height: 20
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f29b0d87f87db8270800000000000000
-      internalID: 8253927753293805871
+      spriteID: 018e466e0f6432b40a1a378df8c0ad96
+      internalID: -331863409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Temple Sample sheet_48_8
+      name: Ocean_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 548
-        y: 125
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7f27b03cd81051c80800000000000000
-      internalID: -8352768225514392841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_9
-      rect:
-        serializedVersion: 2
-        x: 593
-        y: 122
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 548daa1584da30d00800000000000000
-      internalID: 937783673542596677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_10
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 98
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 926ce7954b18c8ed0800000000000000
-      internalID: -2410409088954481111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Temple Sample sheet_48_11
-      rect:
-        serializedVersion: 2
-        x: 584
-        y: 101
+        x: 64
+        y: 32
         width: 32
-        height: 17
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c368aceb55238fb90800000000000000
-      internalID: -7207955859751926212
+      spriteID: 4752bca25ba5ad044bab2b77fb5ade00
+      internalID: 1337741610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Temple Sample sheet_48_12
+      name: Ocean_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db247408ba4ac646bad735a080ca61a
+      internalID: 1393865351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8759bf1da8ec04588ff0febda1e193
+      internalID: 1540089400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7941205bcecd3f74ca36d44391df53a7
+      internalID: 1445327698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a838609917f50524a850ced83d5b68cf
+      internalID: -2012209558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e7e298fac5d3247a619bd28474707c
+      internalID: -221950511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 193
-        height: 97
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1ff5db77c10493ca0800000000000000
-      internalID: -6036723334501277711
+      spriteID: 01f8c9b2651b2d04489832ba3f65b6ac
+      internalID: 1517526065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Temple Sample sheet_48_13
+      name: Ocean_SpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 239
-        y: 17
-        width: 146
-        height: 80
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 611820b3abacd7ed0800000000000000
-      internalID: -2414550923997970154
+      spriteID: 43e727ca337228041b348974a30065f6
+      internalID: -49306904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50475d511eea59f46b5846bcb36ad96c
+      internalID: 2060077861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c5f611c1186c843a57c560c532e971
+      internalID: 127127027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53248cecf080604e9d19096807e7948
+      internalID: -1275861900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8467616b79b9509478960a30951c3e8a
+      internalID: -1216327683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e903e148d11d2743b4a6a902987e037
+      internalID: -750288363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ocean_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd17fc946f5ddd45bd5bf5c0fac8c9c
+      internalID: 1440803605
       vertices: []
       indices: 
       edges: []
@@ -463,7 +455,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0832402c57151d749a57fc7afd343485
     internalID: 0
     vertices: []
     indices: 
@@ -473,20 +465,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Water Temple Sample sheet_48_0: -460177995810820211
-      Water Temple Sample sheet_48_1: 2203034898536617602
-      Water Temple Sample sheet_48_10: -2410409088954481111
-      Water Temple Sample sheet_48_11: -7207955859751926212
-      Water Temple Sample sheet_48_12: -6036723334501277711
-      Water Temple Sample sheet_48_13: -2414550923997970154
-      Water Temple Sample sheet_48_2: 6135647743549638011
-      Water Temple Sample sheet_48_3: -8514168087447069408
-      Water Temple Sample sheet_48_4: 7352545577618059048
-      Water Temple Sample sheet_48_5: -1935241605100375858
-      Water Temple Sample sheet_48_6: 2642521452994197064
-      Water Temple Sample sheet_48_7: 8253927753293805871
-      Water Temple Sample sheet_48_8: -8352768225514392841
-      Water Temple Sample sheet_48_9: 937783673542596677
+      Ocean_SpriteSheet_0: -210786638
+      Ocean_SpriteSheet_1: -331863409
+      Ocean_SpriteSheet_10: 2060077861
+      Ocean_SpriteSheet_11: 127127027
+      Ocean_SpriteSheet_12: -1275861900
+      Ocean_SpriteSheet_13: -1216327683
+      Ocean_SpriteSheet_14: -750288363
+      Ocean_SpriteSheet_15: 1440803605
+      Ocean_SpriteSheet_2: 1337741610
+      Ocean_SpriteSheet_3: 1393865351
+      Ocean_SpriteSheet_4: 1540089400
+      Ocean_SpriteSheet_5: 1445327698
+      Ocean_SpriteSheet_6: -2012209558
+      Ocean_SpriteSheet_7: -221950511
+      Ocean_SpriteSheet_8: 1517526065
+      Ocean_SpriteSheet_9: -49306904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

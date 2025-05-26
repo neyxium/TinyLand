@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Water Temple Sample sheet_16_0: -2793871205816832447
+      Water Temple Sample sheet_16_1: -5579429379459478845
+      Water Temple Sample sheet_16_10: 4820054171992762429
+      Water Temple Sample sheet_16_11: -683192040121795442
+      Water Temple Sample sheet_16_12: 4429801330565994978
+      Water Temple Sample sheet_16_2: -6481647085032214852
+      Water Temple Sample sheet_16_3: 3742981303210526554
+      Water Temple Sample sheet_16_4: 8255082799666634945
+      Water Temple Sample sheet_16_5: -7964065478609655103
+      Water Temple Sample sheet_16_6: -8069804399030897201
+      Water Temple Sample sheet_16_7: 1262850718893219981
+      Water Temple Sample sheet_16_8: 4715324170063629215
+      Water Temple Sample sheet_16_9: 4287783849486604096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
