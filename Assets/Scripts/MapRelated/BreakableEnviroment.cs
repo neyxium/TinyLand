@@ -8,7 +8,7 @@ public class BreakableEnviroment : MonoBehaviour
     [SerializeField] GameObject worldItemPrefab;
     public bool DamageObject()
     {
-        enviromentHealth--;
+        enviromentHealth -= 1+GameData.Instance.houseProgress;
 
         if (enviromentHealth <= 0)
         {

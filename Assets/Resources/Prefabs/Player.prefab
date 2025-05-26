@@ -330,6 +330,9 @@ MonoBehaviour:
   - {fileID: -573628331220069423, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   axe:
   - {fileID: -1430991953356022600, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  - {fileID: -7006186734936748667, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  - {fileID: -8233637303347961649, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
+  - {fileID: -8299164403938914590, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   bow:
   - {fileID: -8464572974738409454, guid: 7b871b78e62a3e842a328165ed58a73d, type: 3}
   equipedTool: 

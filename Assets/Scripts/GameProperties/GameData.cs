@@ -30,8 +30,8 @@ public class GameData : MonoBehaviour
     }
     private void Start()
     {
-        //ResetData();
-        //ClearBackpack();
+        ResetData();
+        ClearBackpack();
         LoadData();
         LoadBackpack();
     }
@@ -121,7 +121,7 @@ public class GameData : MonoBehaviour
 
     public Item GetItemByName(string name)
     {
-        Item[] allItems = Resources.LoadAll<Item>("Items");
+        Item[] allItems = Resources.LoadAll<Item>("");
         foreach (Item item in allItems)
         {
             if (item.itemName == name)
@@ -172,8 +172,20 @@ public class GameData : MonoBehaviour
         OnInventoryChanged?.Invoke();
     }
 
+    public void UpgradeAxeBasedOnHouse()
+    {
+        string newAxeName = $"Axe_LVL{houseProgress}";
 
+        // Odstrani vse stare Axe_LVLx
+        backpack.RemoveAll(item => item.itemName.StartsWith("Axe_LVL"));
 
+        // Dodaj nadgrajenega
+        AddToBackpack(newAxeName, 1);
+        SaveBackpack();
+        OnInventoryChanged?.Invoke();
+
+        Debug.Log($"Upgraded axe to: {newAxeName}");
+    }
 
     // Wrapper class for List<InventoryItem> (JsonUtility doesn't serialize lists directly)
     [System.Serializable]

@@ -28,16 +28,19 @@ public class RuinQuest : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = campFire;
+            GameData.Instance.UpgradeAxeBasedOnHouse();
         }
         else if (houseProgress == 2)
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = woodenHouse;
+            GameData.Instance.UpgradeAxeBasedOnHouse();
         }
         else if (houseProgress == 3)
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = stoneHouse;
+            GameData.Instance.UpgradeAxeBasedOnHouse();
         }
     }
 
@@ -113,6 +116,8 @@ public class RuinQuest : MonoBehaviour
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         gameObject.GetComponent<SpriteRenderer>().sprite = campFire;
         GameData.Instance.houseProgress++;
+        GameData.Instance.UpgradeAxeBasedOnHouse();
+        GameData.Instance.SaveBackpack();
         GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble4.SetActive(true);
@@ -131,6 +136,8 @@ public class RuinQuest : MonoBehaviour
         Destroy(bubble6);
         gameObject.GetComponent<SpriteRenderer>().sprite = woodenHouse;
         GameData.Instance.houseProgress++;
+        GameData.Instance.UpgradeAxeBasedOnHouse();
+        GameData.Instance.SaveBackpack();
         GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble7.SetActive(true);
@@ -149,6 +156,8 @@ public class RuinQuest : MonoBehaviour
         Destroy(bubble9);
         gameObject.GetComponent<SpriteRenderer>().sprite = stoneHouse;
         GameData.Instance.houseProgress++;
+        GameData.Instance.UpgradeAxeBasedOnHouse();
+        GameData.Instance.SaveBackpack();
         GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble10.SetActive(true);

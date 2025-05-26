@@ -13,6 +13,11 @@ public class ToolBehaviour : MonoBehaviour
     void Update()
     {
         HandleInput();
+        if (string.IsNullOrEmpty(equipedTool))
+        {
+            equipedTool = GetTool(0); // Prvi tool v inventarju
+            SelectTool(equipedTool);
+        }
     }
 
     private void HandleInput()
@@ -53,7 +58,7 @@ public class ToolBehaviour : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = pickaxe[0];
                 break;
             case "Axe":
-                gameObject.GetComponent<SpriteRenderer>().sprite = axe[0];
+                gameObject.GetComponent<SpriteRenderer>().sprite = axe[GameData.Instance.houseProgress];
                 break;
             case "Bow":
                 gameObject.GetComponent<SpriteRenderer>().sprite = bow[0];
