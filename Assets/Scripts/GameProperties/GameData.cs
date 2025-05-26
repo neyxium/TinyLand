@@ -14,6 +14,8 @@ public class GameData : MonoBehaviour
     public int trees;
     public int saplings;
     public int plantedSaplings;
+    public bool firstTime = true;
+    public int questProgress = 0;
     void Awake()
     {
         if (Instance == null)
@@ -43,6 +45,8 @@ public class GameData : MonoBehaviour
         PlayerPrefs.SetInt("trees", trees);
         PlayerPrefs.SetInt("saplings", saplings);
         PlayerPrefs.SetInt("plantedSaplings", plantedSaplings);
+        PlayerPrefs.SetInt("firstTime", firstTime ? 1 : 0);
+        PlayerPrefs.SetInt("questProgress", questProgress);
         PlayerPrefs.Save();
     }
 
@@ -55,6 +59,8 @@ public class GameData : MonoBehaviour
         trees = PlayerPrefs.GetInt("trees", -1);
         saplings = PlayerPrefs.GetInt("saplings", -1);
         plantedSaplings = PlayerPrefs.GetInt("plantedSaplings", -1);
+        firstTime = PlayerPrefs.GetInt("firstTime", 1) == 1;
+        questProgress = PlayerPrefs.GetInt("questProgress", 0);
     }
 
     public void ResetData()

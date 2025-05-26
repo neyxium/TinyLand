@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 960275710033181203}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 7635321912973537665}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -470,6 +470,7 @@ MonoBehaviour:
   player: {fileID: 5489657276000157799}
   tool: {fileID: 6048551103538473941}
   direction: 0
+  sapling: {fileID: 0}
 --- !u!95 &7635321912973537665
 Animator:
   serializedVersion: 7

@@ -14,7 +14,7 @@ public enum Direction
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float MovementSpeed = 100f;
+    [SerializeField] float MovementSpeed = 200f;
     [SerializeField] GameObject player;
     [SerializeField] GameObject tool;
 
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject stoneInRange = null;
     [SerializeField] GameObject sapling;
     ToolBehaviour toolBehaviour;
+    GameObject mapMenu;
 
     void Start()
     {
@@ -34,12 +35,40 @@ public class PlayerMovement : MonoBehaviour
         toolAnimator = tool.GetComponent<Animator>();
         toolRenderer = tool.GetComponent<SpriteRenderer>();
         toolBehaviour = tool.GetComponent<ToolBehaviour>();
+
+        foreach (var obj in Resources.FindObjectsOfTypeAll<GameObject>())
+        {
+            if (obj.name == "Map" && obj.scene.IsValid())
+            {
+                mapMenu = obj;
+                break;
+            }
+        }
+
+        if (!GameData.Instance.firstTime)
+        {
+            GameObject axe = GameObject.Find("Axe");
+            if (axe != null)
+            {
+                Destroy(axe);
+            }
+        }
+
+        if (GameData.Instance.firstTime)
+        {
+            playerAnimator.SetBool("firstTime", true);
+        }
+
     }
 
     void Update()
     {
-        HandleInput();
-        HandleToolDirection();
+        if (!GameData.Instance.firstTime)
+        {
+            HandleInput();
+            HandleMapInput();
+            HandleToolDirection();
+        }
     }
 
     private void HandleToolDirection()
@@ -144,6 +173,18 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetInteger("direction", (int)direction);
     }
 
+    public void HandleMapInput()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && !mapMenu.activeSelf)
+        {
+            OpenMap();
+        }
+        else if ((Input.GetKeyDown(KeyCode.M) && mapMenu.activeSelf) || (Input.GetKeyDown(KeyCode.Escape) && mapMenu.activeSelf))
+        {
+            CloseMap();
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -235,6 +276,23 @@ public class PlayerMovement : MonoBehaviour
     public void SetStoneInRange(GameObject stone)
     {
         stoneInRange = stone;
+    }
+
+    public void SetEndFirstTimeAnimaiton()
+    {
+        GameData.Instance.firstTime = false;
+        GameData.Instance.SaveData();
+        playerAnimator.SetBool("firstTime", false);
+    }
+
+    public void OpenMap()
+    {
+        mapMenu.SetActive(true);
+    }
+
+    public void CloseMap()
+    {
+        mapMenu.SetActive(false);
     }
 
 }
