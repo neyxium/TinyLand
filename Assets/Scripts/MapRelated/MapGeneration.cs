@@ -27,7 +27,7 @@ public class MapGeneration : MonoBehaviour
         }
     }
 
-    private void GenerateObjects(int trees = 50, int saplings = -1)
+    private void GenerateObjects(int trees = 25, int saplings = -1)
     {
         Debug.Log("Trees: " + trees + ", Saplings: " + saplings);
         GameData.Instance.trees = 0;
@@ -130,7 +130,7 @@ public class MapGeneration : MonoBehaviour
             safetyBreak++;
             random = Random.Range(0, objects.Count);
 
-            float radius = 15f;
+            float radius = 10f;
             float angle = Random.Range(0f, Mathf.PI * 2f);
             float distanceFromCenter = Random.Range(0f, radius);
             float x = Mathf.Cos(angle) * distanceFromCenter;

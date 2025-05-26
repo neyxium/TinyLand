@@ -19,27 +19,25 @@ public class RuinQuest : MonoBehaviour
     [SerializeField] Sprite stoneHouse;
 
     int questProgress;
-    bool changed = false;
 
     void Start()
     {
-        questProgress = GameData.Instance.questProgress;
+        int houseProgress = GameData.Instance.houseProgress;
 
-        // Nastavi pravilen sprite glede na napredek
-        if (questProgress == 1 || changed == true)
+        if (houseProgress == 1)
         {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = campFire;
-            changed = false;
         }
-        else if (questProgress == 2 || changed == true)
+        else if (houseProgress == 2)
         {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = woodenHouse;
-            changed = false;
         }
-        else if (questProgress == 3 || changed == true)
+        else if (houseProgress == 3)
         {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
             gameObject.GetComponent<SpriteRenderer>().sprite = stoneHouse;
-            changed = false;
         }
     }
 
@@ -56,9 +54,9 @@ public class RuinQuest : MonoBehaviour
                     break;
 
                 case 1:
-                    if (GameData.Instance.GetItemQuantity("wood") >= 10)
+                    if (GameData.Instance.GetItemQuantity("Wood") >= 10)
                     {
-                        GameData.Instance.TakeAwayItem("wood", 10);
+                        GameData.Instance.TakeAwayItem("Wood", 10);
                         StartCoroutine(SecondQuestText());
                     }
                     else
@@ -68,9 +66,9 @@ public class RuinQuest : MonoBehaviour
                     break;
 
                 case 2:
-                    if (GameData.Instance.GetItemQuantity("wood") >= 25)
+                    if (GameData.Instance.GetItemQuantity("Wood") >= 25)
                     {
-                        GameData.Instance.TakeAwayItem("wood", 25);
+                        GameData.Instance.TakeAwayItem("Wood", 25);
                         StartCoroutine(ThirdQuestText());
                     }
                     else
@@ -80,9 +78,9 @@ public class RuinQuest : MonoBehaviour
                     break;
 
                 case 3:
-                    if (GameData.Instance.GetItemQuantity("wood") >= 50)
+                    if (GameData.Instance.GetItemQuantity("Wood") >= 50)
                     {
-                        GameData.Instance.TakeAwayItem("wood", 50);
+                        GameData.Instance.TakeAwayItem("Wood", 50);
                         StartCoroutine(FourthQuestText());
                     }
                     else
@@ -114,7 +112,8 @@ public class RuinQuest : MonoBehaviour
         Destroy(bubble3);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
         gameObject.GetComponent<SpriteRenderer>().sprite = campFire;
-        changed = true;
+        GameData.Instance.houseProgress++;
+        GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble4.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -131,7 +130,8 @@ public class RuinQuest : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(bubble6);
         gameObject.GetComponent<SpriteRenderer>().sprite = woodenHouse;
-        changed = true;
+        GameData.Instance.houseProgress++;
+        GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble7.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -148,7 +148,8 @@ public class RuinQuest : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(bubble9);
         gameObject.GetComponent<SpriteRenderer>().sprite = stoneHouse;
-        changed = true;
+        GameData.Instance.houseProgress++;
+        GameData.Instance.SaveData();
         yield return new WaitForSeconds(1f);
         bubble10.SetActive(true);
         yield return new WaitForSeconds(3f);

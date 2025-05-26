@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("firstTime", true);
         }
 
+
+
     }
 
     void Update()
@@ -122,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            GameData.Instance.AddToBackpack("wood", 10);
+            GameData.Instance.AddToBackpack("Wood", 10);
             GameData.Instance.SaveBackpack();
         }
 

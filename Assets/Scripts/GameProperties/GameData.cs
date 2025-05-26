@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class GameData : MonoBehaviour
@@ -16,6 +15,7 @@ public class GameData : MonoBehaviour
     public int plantedSaplings;
     public bool firstTime = true;
     public int questProgress = 0;
+    public int houseProgress = 0;
     void Awake()
     {
         if (Instance == null)
@@ -30,10 +30,10 @@ public class GameData : MonoBehaviour
     }
     private void Start()
     {
-        LoadData();
-        LoadBackpack();
         //ResetData();
         //ClearBackpack();
+        LoadData();
+        LoadBackpack();
     }
 
     public void SaveData()
@@ -47,6 +47,7 @@ public class GameData : MonoBehaviour
         PlayerPrefs.SetInt("plantedSaplings", plantedSaplings);
         PlayerPrefs.SetInt("firstTime", firstTime ? 1 : 0);
         PlayerPrefs.SetInt("questProgress", questProgress);
+        PlayerPrefs.SetInt("houseProgress", houseProgress);
         PlayerPrefs.Save();
     }
 
@@ -61,6 +62,7 @@ public class GameData : MonoBehaviour
         plantedSaplings = PlayerPrefs.GetInt("plantedSaplings", -1);
         firstTime = PlayerPrefs.GetInt("firstTime", 1) == 1;
         questProgress = PlayerPrefs.GetInt("questProgress", 0);
+        houseProgress = PlayerPrefs.GetInt("houseProgress", 0);
     }
 
     public void ResetData()
@@ -113,7 +115,7 @@ public class GameData : MonoBehaviour
         {
             backpack.Add(new InventoryItem(itemName, quantity));
         }
-
+        GameData.Instance.SaveBackpack();
         OnInventoryChanged?.Invoke(); // Invokes event and tells all listeners that the inventory has changed (InventoryUI)
     }
 
@@ -135,9 +137,11 @@ public class GameData : MonoBehaviour
         {
             if (item.itemName == itemName)
             {
+                Debug.Log("You have: " + item.quantity + " of " + itemName);
                 return item.quantity;
             }
         }
+        Debug.Log("There is no: " + itemName);
         return 0;
     }
 
@@ -164,6 +168,7 @@ public class GameData : MonoBehaviour
             }
         }
         backpackSpaceFilled--;
+        GameData.Instance.SaveBackpack();
         OnInventoryChanged?.Invoke();
     }
 
