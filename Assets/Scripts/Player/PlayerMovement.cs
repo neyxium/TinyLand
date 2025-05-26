@@ -120,6 +120,12 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            GameData.Instance.AddToBackpack("wood", 10);
+            GameData.Instance.SaveBackpack();
+        }
+
         if (Input.GetMouseButton(0))
         {
             if (tool.activeSelf && (toolBehaviour.equipedTool == "Axe" || toolBehaviour.equipedTool == "Pickaxe"))

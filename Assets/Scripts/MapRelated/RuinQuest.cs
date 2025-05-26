@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RuinQuest : MonoBehaviour
@@ -18,12 +17,15 @@ public class RuinQuest : MonoBehaviour
     [SerializeField] Sprite campFire;
     [SerializeField] Sprite woodenHouse;
     [SerializeField] Sprite stoneHouse;
+
     int questProgress;
     bool changed = false;
 
     void Start()
     {
         questProgress = GameData.Instance.questProgress;
+
+        // Nastavi pravilen sprite glede na napredek
         if (questProgress == 1 || changed == true)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = campFire;
@@ -44,23 +46,50 @@ public class RuinQuest : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         questProgress = GameData.Instance.questProgress;
-        if (collision.gameObject.tag == "Player")
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (questProgress == 0)
+            switch (questProgress)
             {
-                StartCoroutine(FirstQuestText());
-            }
-            else if (questProgress == 1)
-            {
-                StartCoroutine(SecondQuestText());
-            }
-            else if (questProgress == 2)
-            {
-                StartCoroutine(ThirdQuestText());
-            }
-            else if (questProgress == 3)
-            {
-                StartCoroutine(FourthQuestText());
+                case 0:
+                    StartCoroutine(FirstQuestText());
+                    break;
+
+                case 1:
+                    if (GameData.Instance.GetItemQuantity("wood") >= 10)
+                    {
+                        GameData.Instance.TakeAwayItem("wood", 10);
+                        StartCoroutine(SecondQuestText());
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough wood for second quest (needs 10).");
+                    }
+                    break;
+
+                case 2:
+                    if (GameData.Instance.GetItemQuantity("wood") >= 25)
+                    {
+                        GameData.Instance.TakeAwayItem("wood", 25);
+                        StartCoroutine(ThirdQuestText());
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough wood for third quest (needs 25).");
+                    }
+                    break;
+
+                case 3:
+                    if (GameData.Instance.GetItemQuantity("wood") >= 50)
+                    {
+                        GameData.Instance.TakeAwayItem("wood", 50);
+                        StartCoroutine(FourthQuestText());
+                    }
+                    else
+                    {
+                        Debug.Log("Not enough wood for final quest (needs 50).");
+                    }
+                    break;
             }
         }
     }
@@ -125,8 +154,4 @@ public class RuinQuest : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(bubble10);
     }
-
-
-
-
 }

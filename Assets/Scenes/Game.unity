@@ -2763,14 +2763,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2325062319898522840, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
-      propertyPath: mapMenu
-      value: 
-      objectReference: {fileID: 1155692975}
-    - target: {fileID: 2325062319898522840, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
-      propertyPath: MovementSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5489657276000157799, guid: f0c424913e4d0dd43883a189a4b3160f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -25809,11 +25801,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f909c18c1a4464c94bac2198d60170, type: 3}
---- !u!1 &1155692975 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5640457781090093826, guid: 22f909c18c1a4464c94bac2198d60170, type: 3}
-  m_PrefabInstance: {fileID: 1155692974}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225449233
 GameObject:
   m_ObjectHideFlags: 0

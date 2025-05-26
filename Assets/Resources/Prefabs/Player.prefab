@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db113923b969cf42aa195cd0244f959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
+  MovementSpeed: 10
   player: {fileID: 5489657276000157799}
   tool: {fileID: 6048551103538473941}
   direction: 0

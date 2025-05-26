@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
     public static GameData Instance;
     public List<InventoryItem> backpack = new List<InventoryItem>();
     private string backpackSavePath => Application.persistentDataPath + "/backpack.json";
-    public int backpackMaxSpace = 100;
+    public int backpackMaxSpace = 1000;
     public int backpackSpaceFilled = 0;
     public int wood = 0;
     public int playerHealth = 100;
@@ -128,6 +128,19 @@ public class GameData : MonoBehaviour
         Debug.LogWarning("Item not found: " + name);
         return null;
     }
+
+    public int GetItemQuantity(string itemName)
+    {
+        foreach (InventoryItem item in backpack)
+        {
+            if (item.itemName == itemName)
+            {
+                return item.quantity;
+            }
+        }
+        return 0;
+    }
+
 
     public bool HasItem(string itemName)
     {
